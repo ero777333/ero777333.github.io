@@ -168,16 +168,6 @@
       transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
     }
 
-    .theme-toggle span {
-      font-size: 14px;
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-1px);
-    }
-
     /* HERO */
     .hero {
       display: grid;
@@ -241,24 +231,17 @@
       gap: 10px;
     }
 
-    .btn-primary,
-    .btn-ghost {
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 8px 16px;
       border-radius: 999px;
       font-size: 13px;
-      border: 1px solid transparent;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
-    }
-
-    .btn-primary {
+      font-weight: 600;
+      border: none;
       background: linear-gradient(135deg, var(--accent), #9f7bff);
       color: #050509;
-      font-weight: 600;
     }
 
     .btn-primary:hover {
@@ -267,18 +250,15 @@
     }
 
     .btn-ghost {
-      border-color: var(--border-subtle);
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
       color: var(--text-soft);
-      background: rgba(255, 255, 255, 0.01);
+      background: rgba(255,255,255,0.02);
+      text-decoration: none;
     }
 
-    .btn-ghost:hover {
-      border-color: rgba(255, 255, 255, 0.26);
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-      transform: translateY(-1px);
-    }
-
+    /* PROFILE CARD */
     .hero-right {
       display: flex;
       justify-content: flex-end;
@@ -288,7 +268,7 @@
       position: relative;
       background: var(--card-bg);
       border-radius: 18px;
-      padding: 16px 16px 16px 16px;
+      padding: 16px;
       border: 1px solid var(--border-subtle);
       overflow: hidden;
       min-height: 180px;
@@ -304,46 +284,34 @@
     }
 
     .avatar {
-      position: relative;
       width: 40px;
       height: 40px;
       border-radius: 14px;
       background: radial-gradient(circle at 30% 10%, #ffffff, var(--accent));
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 20px;
-      margin-bottom: 10px;
+      align-items: center;
       color: #050509;
-    }
-
-    .profile-name {
-      position: relative;
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .profile-title {
-      position: relative;
-      font-size: 12px;
-      color: var(--text-soft);
+      font-size: 20px;
       margin-bottom: 8px;
     }
 
-    .profile-note {
-      position: relative;
+    .profile-name {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .profile-title {
       font-size: 12px;
       color: var(--text-soft);
       margin-bottom: 10px;
-      max-width: 280px;
     }
 
     .profile-tags {
-      position: relative;
       display: flex;
-      flex-wrap: wrap;
       gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
     }
 
     .tag-pill {
@@ -352,41 +320,20 @@
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
       color: var(--text-soft);
-      background: rgba(0, 0, 0, 0.18);
-    }
-
-    .tag-pill.accent {
-      background: var(--accent-soft);
-      color: var(--text);
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-
-    body.theme-light .tag-pill {
-      background: rgba(0, 0, 0, 0.02);
-    }
-    body.theme-light .tag-pill.accent {
-      background: var(--accent-soft);
-      color: #14141f;
+      background: rgba(0,0,0,0.2);
     }
 
     /* SECTION BASE */
     .section {
       border-radius: 18px;
-      padding: 16px 14px 16px 14px;
-      background: rgba(0, 0, 0, 0.24);
+      padding: 16px;
+      background: rgba(0,0,0,0.25);
       border: 1px solid var(--border-subtle);
       backdrop-filter: blur(18px);
     }
-    body.theme-light .section {
-      background: rgba(255,255,255,0.9);
-    }
 
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
       margin-bottom: 12px;
-      gap: 12px;
     }
 
     .section-title {
@@ -394,39 +341,31 @@
       font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      opacity: 0.9;
     }
 
     .section-sub {
-      font-size: 13px;
       color: var(--text-soft);
-      margin-top: 4px;
+      font-size: 13px;
     }
 
-    /* EXPERIENCE GRID */
+    /* EXPERIENCE */
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
     }
 
     .card {
-      position: relative;
       border-radius: 14px;
-      background: rgba(0, 0, 0, 0.18);
+      padding: 14px;
+      background: rgba(0,0,0,0.22);
       border: 1px solid var(--border-subtle);
-      padding: 10px 10px 12px 10px;
-      overflow: hidden;
-      min-height: 86px;
-    }
-    body.theme-light .card {
-      background: rgba(255,255,255,0.9);
+      position: relative;
     }
 
     .card-label {
       font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: var(--text-soft);
       margin-bottom: 4px;
     }
@@ -434,7 +373,7 @@
     .card-title {
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     .card-meta {
@@ -446,16 +385,6 @@
     .card-metric {
       font-size: 12px;
       color: var(--text-soft);
-      max-width: 260px;
-    }
-
-    .card-gradient {
-      position: absolute;
-      inset: -20%;
-      background: radial-gradient(circle at top right, var(--accent-soft), transparent 60%);
-      opacity: 0.7;
-      pointer-events: none;
-      mix-blend-mode: soft-light;
     }
 
     /* CAROUSEL */
@@ -466,9 +395,6 @@
       padding: 12px;
       overflow: hidden;
       position: relative;
-    }
-    body.theme-light .carousel {
-      background: radial-gradient(circle at top left, #e0ddff,#ffffff 60%);
     }
 
     .carousel-track {
@@ -487,11 +413,11 @@
 
     .carousel-video-wrapper {
       border-radius: 16px;
-      background: #050509;
+      background: #000;
       overflow: hidden;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       aspect-ratio: 9 / 16;
     }
 
@@ -503,25 +429,17 @@
     }
 
     .carousel-caption {
+      padding: 6px 2px 4px 4px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       gap: 10px;
-      padding: 6px 2px 4px 4px;
     }
 
     .carousel-caption h3 {
       font-size: 18px;
-      margin-bottom: 4px;
     }
 
     .carousel-meta {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-    }
-
-    .carousel-caption p {
       font-size: 13px;
       color: var(--text-soft);
     }
@@ -538,22 +456,12 @@
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
       color: var(--text-soft);
-      background: rgba(0, 0, 0, 0.16);
-    }
-    body.theme-light .carousel-tag {
-      background: rgba(0,0,0,0.03);
     }
 
     .carousel-controls {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       margin-top: 10px;
-    }
-
-    .carousel-buttons {
-      display: flex;
-      gap: 8px;
     }
 
     .carousel-btn {
@@ -561,71 +469,40 @@
       height: 32px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(255,255,255,0.03);
       color: var(--text);
       cursor: pointer;
       font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
-    }
-    body.theme-light .carousel-btn {
-      background: rgba(255,255,255,0.85);
-      color: #14141f;
-    }
-
-    .carousel-btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255, 255, 255, 0.4);
-      background: rgba(0,0,0,0.7);
-    }
-    body.theme-light .carousel-btn:hover {
-      background: #ffffff;
     }
 
     .carousel-dots {
       display: flex;
       gap: 6px;
-      align-items: center;
     }
 
     .carousel-dot {
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255,255,255,0.4);
       background: transparent;
-      opacity: 0.6;
       cursor: pointer;
-      transition: width 0.2s ease, background 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
-    }
-    body.theme-light .carousel-dot {
-      border-color: rgba(0,0,0,0.25);
+      opacity: 0.6;
     }
 
     .carousel-dot.active {
       width: 18px;
-      background: #ffffff;
-      border-color: #ffffff;
+      background: #fff;
+      border-color: #fff;
       opacity: 1;
-    }
-    body.theme-light .carousel-dot.active {
-      background: #14141f;
-      border-color: #14141f;
     }
 
     /* CONTACT */
     .contact {
       border-radius: 18px;
-      padding: 16px 14px 16px 14px;
-      background: rgba(0, 0, 0, 0.34);
+      padding: 16px;
+      background: rgba(0,0,0,0.34);
       border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(18px);
-      font-size: 13px;
-    }
-    body.theme-light .contact {
-      background: rgba(255,255,255,0.96);
     }
 
     .contact-row {
@@ -636,21 +513,8 @@
       color: var(--text-soft);
     }
 
-    .contact-row a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-      transition: border-color 0.2s ease, color 0.2s ease;
-    }
-
-    .contact-row a:hover {
-      color: var(--text);
-      border-color: var(--text-soft);
-    }
-
     footer {
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 11px;
       color: var(--text-soft);
     }
@@ -660,7 +524,6 @@
       position: fixed;
       right: 20px;
       bottom: 20px;
-      z-index: 50;
       padding: 10px 16px;
       border-radius: 999px;
       border: none;
@@ -668,83 +531,33 @@
       color: #050509;
       font-size: 13px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
       box-shadow: 0 14px 30px rgba(0,0,0,0.6);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.2s ease;
+      cursor: pointer;
     }
 
-    .floating-contact:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.75);
-    }
-
-    .floating-contact-icon {
-      font-size: 14px;
-    }
-
-    /* FADE-IN ANIMATIONS */
+    /* FADE-IN */
     .fade-section {
       opacity: 0;
       transform: translateY(16px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      transition: 0.5s ease-out;
     }
-
     .fade-section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      body {
-        padding: 12px;
-      }
-
-      .page {
-        padding: 14px 14px 18px 14px;
-        border-radius: 18px;
-      }
-
+    @media(max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
       }
-
-      .hero-right {
-        justify-content: flex-start;
-      }
-
-      .profile-card {
-        margin-top: 4px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
       .carousel-slide {
         grid-template-columns: 1fr;
       }
-
       .carousel-video-wrapper {
         max-width: 360px;
         margin: 0 auto;
       }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .floating-contact {
-        right: 12px;
-        bottom: 14px;
-        padding: 8px 14px;
-        font-size: 12px;
-      }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -755,9 +568,9 @@
     <div class="loader"></div>
   </div>
 
+  <!-- FLOATING CONTACT BUTTON -->
   <button class="floating-contact" id="floating-contact">
-    <span class="floating-contact-icon">✉️</span>
-    <span>Contact me</span>
+    ✉️ Contact me
   </button>
 
   <div class="page">
@@ -807,10 +620,8 @@
             href="https://splendid-caption-d3f.notion.site/16695cddc69780a89c66c87c7f25fcd2?v=16695cddc697818bb4fa000c6778ee7b"
             class="btn-primary"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            Watch my work
-          </a>
+            rel="noopener noreferrer">Watch my work</a>
+
           <a href="#contact" class="btn-ghost">Let’s work together →</a>
         </div>
       </div>
@@ -821,9 +632,6 @@
           <div class="avatar">🎬</div>
           <div class="profile-name">Erik Baghdasaryan</div>
           <div class="profile-title">Short-form Video Editor</div>
-          <p class="profile-note">
-            Based in Armenia. Editing cinematic, motivational & podcast-style reels for creators and businesses.
-          </p>
           <div class="profile-tags">
             <span class="tag-pill accent">Short-form growth</span>
             <span class="tag-pill">DaVinci / CapCut</span>
@@ -837,71 +645,60 @@
     <!-- EXPERIENCE -->
     <section class="section fade-section" id="experience">
       <div class="section-header">
-        <div>
-          <div class="section-title">Work Experience</div>
-          <div class="section-sub">Some of the people & brands I’ve edited for.</div>
-        </div>
+        <div class="section-title">Work Experience</div>
+        <div class="section-sub">Who I've edited for.</div>
       </div>
 
       <div class="grid">
         <article class="card">
           <div class="card-label">Creator</div>
           <div class="card-title">Amy Landino</div>
-          <div class="card-meta">Short-form editing · YouTube & Instagram</div>
-          <p class="card-metric">Edited 120+ videos in 2 months, helping her pass <strong>100K views</strong> and <strong>100K followers</strong> on IG.</p>
-          <div class="card-gradient"></div>
+          <div class="card-meta">Short-form editing</div>
+          <p class="card-metric">120+ videos edited · helped reach 100K+ followers & views.</p>
         </article>
 
         <article class="card">
           <div class="card-label">Agency</div>
           <div class="card-title">Alute Media</div>
-          <div class="card-meta">Lead short-form editor</div>
-          <p class="card-metric">Contributed edits generating over <strong>30M views</strong> across client pages.</p>
-          <div class="card-gradient"></div>
+          <div class="card-meta">Lead editor</div>
+          <p class="card-metric">Contributed edits generating 30M+ views.</p>
         </article>
 
         <article class="card">
           <div class="card-label">Brand</div>
-          <div class="card-title">Gymenity & fitness creators</div>
+          <div class="card-title">Gymenity</div>
           <div class="card-meta">Reels & content system</div>
-          <p class="card-metric">Built content systems & edited 100s of reels focused on retention.</p>
-          <div class="card-gradient"></div>
+          <p class="card-metric">Built content systems & edited 100s of reels.</p>
         </article>
 
         <article class="card">
-          <div class="card-label">Multiple creators</div>
+          <div class="card-label">Creators</div>
           <div class="card-title">Ambition & others</div>
-          <div class="card-meta">Podcast & talking-head clips</div>
-          <p class="card-metric">700+ clips for creators (Mark Studer, Sebb Ghiorgiu, Dave Nick, etc.).</p>
-          <div class="card-gradient"></div>
+          <div class="card-meta">Talking-head & podcast edits</div>
+          <p class="card-metric">700+ clips for large creator accounts.</p>
         </article>
       </div>
     </section>
 
-    <!-- REELS / CAROUSEL -->
+    <!-- REELS CAROUSEL -->
     <section class="section fade-section" id="projects">
       <div class="section-header">
-        <div>
-          <div class="section-title">Reel Highlights</div>
-          <div class="section-sub">A few examples of my editing styles.</div>
-        </div>
+        <div class="section-title">Reel Highlights</div>
+        <div class="section-sub">A few examples of my editing styles.</div>
       </div>
 
       <div class="carousel" data-current="0">
         <div class="carousel-track" id="carousel-track">
-          <!-- Slide 1 -->
+
+          <!-- SLIDE 1 -->
           <div class="carousel-slide">
             <div class="carousel-video-wrapper">
-              <video controls preload="metadata" playsinline muted>
-                <source src="videos/reel1.mp4" type="video/mp4" />
-              </video>
+              <video controls preload="metadata" playsinline muted src="videos/reel1.mp4"></video>
             </div>
             <div class="carousel-caption">
-              <div>
-                <h3>Cinematic Voiceover Edit</h3>
-                <p class="carousel-meta">AI voiceover · cinematic pacing · clean transitions.</p>
-                <p>High-retention cinematic reel with AI-generated voiceover, dramatic pacing, tight cuts and clean color grading.</p>
-              </div>
+              <h3>Cinematic Voiceover Edit</h3>
+              <p class="carousel-meta">AI voiceover · cinematic pacing.</p>
+              <p>High-retention cinematic reel with dramatic pacing, clean color and sound design.</p>
               <div class="carousel-tags">
                 <span class="carousel-tag">Cinematic</span>
                 <span class="carousel-tag">AI Voiceover</span>
@@ -910,60 +707,49 @@
             </div>
           </div>
 
-          <!-- Slide 2 -->
+          <!-- SLIDE 2 -->
           <div class="carousel-slide">
             <div class="carousel-video-wrapper">
-              <video controls preload="metadata" playsinline muted src="videos/reel2.mp4">
-                </video>
+              <video controls preload="metadata" playsinline muted src="videos/reel2.mp4"></video>
             </div>
             <div class="carousel-caption">
-              <div>
-                <h3>High-Retention Edit</h3>
-                <p class="carousel-meta">Beat-synced cuts · movement · sound design.</p>
-                <p>Fast, high-retention reel with punchy sound design, beat-aligned cuts, quick zooms and smooth motion.</p>
-              </div>
+              <h3>High-Retention Edit</h3>
+              <p class="carousel-meta">Beat-synced · movement · sound design.</p>
+              <p>Fast, high-energy reel with punchy sound design, beat-aligned cuts and zooms.</p>
               <div class="carousel-tags">
-                <span class="carousel-tag">High retention</span>
-                <span class="carousel-tag">Beat sync</span>
+                <span class="carousel-tag">Beat Sync</span>
+                <span class="carousel-tag">High Retention</span>
                 <span class="carousel-tag">Animations</span>
               </div>
             </div>
           </div>
 
-          <!-- Slide 3 -->
+          <!-- SLIDE 3 -->
           <div class="carousel-slide">
             <div class="carousel-video-wrapper">
-              <video controls preload="metadata" playsinline muted>
-                <video controls preload="metadata" playsinline muted src="videos/reel3.mp4">
-                  </video>
+              <video controls preload="metadata" playsinline muted src="videos/reel3.mp4"></video>
             </div>
             <div class="carousel-caption">
-              <div>
-                <h3>Emotional Podcast Clip</h3>
-                <p class="carousel-meta">Clean cut · emotional pacing.</p>
-                <p>Emotional, clean podcast edit focused on framing, color, subtle movement and smooth dialogue flow.</p>
-              </div>
+              <h3>Emotional Podcast Clip</h3>
+              <p class="carousel-meta">Clean cut · emotional pacing.</p>
+              <p>Podcast edit with framing, clean color, subtle motion and smooth dialogue flow.</p>
               <div class="carousel-tags">
                 <span class="carousel-tag">Podcast</span>
                 <span class="carousel-tag">Emotional</span>
-                <span class="carousel-tag">Clean edit</span>
+                <span class="carousel-tag">Clean Edit</span>
               </div>
             </div>
           </div>
 
-          <!-- Slide 4 -->
+          <!-- SLIDE 4 -->
           <div class="carousel-slide">
             <div class="carousel-video-wrapper">
-              <video controls preload="metadata" playsinline muted>
-                <video controls preload="metadata" playsinline muted src="videos/reel4.mp4">
-                </video>
+              <video controls preload="metadata" playsinline muted src="videos/reel4.mp4"></video>
             </div>
             <div class="carousel-caption">
-              <div>
-                <h3>Dynamic Edit</h3>
-                <p class="carousel-meta">Speed ramps · transitions · energetic flow.</p>
-                <p>High-energy edit using zooms, ramps, transitions and tight pacing to keep engagement high.</p>
-              </div>
+              <h3>Dynamic Edit</h3>
+              <p class="carousel-meta">Speed ramps · transitions.</p>
+              <p>High-energy edit with zooms, ramps, transitions and tight pacing.</p>
               <div class="carousel-tags">
                 <span class="carousel-tag">Dynamic</span>
                 <span class="carousel-tag">Transitions</span>
@@ -979,6 +765,7 @@
             <button class="carousel-btn" data-dir="prev" id="carousel-prev">‹</button>
             <button class="carousel-btn" data-dir="next" id="carousel-next">›</button>
           </div>
+
           <div class="carousel-dots" id="carousel-dots">
             <button class="carousel-dot active" data-index="0"></button>
             <button class="carousel-dot" data-index="1"></button>
@@ -992,7 +779,8 @@
     <!-- CONTACT -->
     <section class="contact fade-section" id="contact">
       <div class="section-title" style="font-size:1.1rem;">Contact</div>
-      <p>Want scroll-stopping reels, cinematic edits or high-retention podcast clips? Let’s talk.</p>
+      <p>Want cinematic edits or high-retention reels? Let's talk.</p>
+
       <div class="contact-row">
         <span>Email: <a href="mailto:bagdasaryanerik0@gmail.com">bagdasaryanerik0@gmail.com</a></span>
         <span>·</span>
@@ -1001,119 +789,95 @@
         <span>LinkedIn: <a href="https://www.linkedin.com/in/erik-bagdasaryan-876698343/" target="_blank">Profile</a></span>
       </div>
 
-      <footer>© <span id="year"></span> Erik Baghdasaryan – Built by hand with HTML & CSS.</footer>
+      <footer>© <span id="year"></span> Erik Baghdasaryan – Built by hand.</footer>
     </section>
 
   </div>
 
   <script>
     // Preloader
-    window.addEventListener("load", function () {
+    window.addEventListener("load", () => {
       const preloader = document.getElementById("preloader");
-      setTimeout(() => {
-        preloader.classList.add("hidden");
-      }, 300);
+      setTimeout(() => preloader.classList.add("hidden"), 300);
     });
 
-    // Year footer
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme toggle + localStorage
+    // Theme toggle
     const body = document.body;
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-    const themeText = document.getElementById("theme-text");
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+    const text = document.getElementById("theme-text");
 
-    const storedTheme = localStorage.getItem("erik-theme");
-    if (storedTheme === "light") {
+    const saved = localStorage.getItem("erik-theme");
+    if (saved === "light") {
       body.classList.add("theme-light");
-      themeIcon.textContent = "☀️";
-      themeText.textContent = "Light";
+      icon.textContent = "☀️";
+      text.textContent = "Light";
     }
 
-    themeToggle.addEventListener("click", () => {
+    toggle.addEventListener("click", () => {
       body.classList.toggle("theme-light");
       const isLight = body.classList.contains("theme-light");
-      themeIcon.textContent = isLight ? "☀️" : "🌙";
-      themeText.textContent = isLight ? "Light" : "Dark";
+      icon.textContent = isLight ? "☀️" : "🌙";
+      text.textContent = isLight ? "Light" : "Dark";
       localStorage.setItem("erik-theme", isLight ? "light" : "dark");
     });
 
     // Carousel
     const track = document.getElementById("carousel-track");
-    const dots = Array.from(document.querySelectorAll(".carousel-dot"));
-    const prevBtn = document.getElementById("carousel-prev");
-    const nextBtn = document.getElementById("carousel-next");
-    const slidesCount = dots.length;
-    let currentIndex = 0;
+    const dots = [...document.querySelectorAll(".carousel-dot")];
+    const prev = document.getElementById("carousel-prev");
+    const next = document.getElementById("carousel-next");
+    let current = 0;
 
-    function updateCarousel(index) {
-      currentIndex = (index + slidesCount) % slidesCount;
-      track.style.transform = "translateX(" + (-currentIndex * 100) + "%)";
+    function updateCarousel(i) {
+      current = (i + 4) % 4;
+      track.style.transform = `translateX(${-current * 100}%)`;
+      dots.forEach((d, idx) => d.classList.toggle("active", idx === current));
 
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentIndex);
-      });
-
-      // pause all videos except current
-      const videos = track.querySelectorAll("video");
-      videos.forEach((v, i) => {
-        if (i !== currentIndex) {
-          v.pause();
-        }
+      track.querySelectorAll("video").forEach((v, idx) => {
+        if (idx !== current) v.pause();
       });
     }
 
-    prevBtn.addEventListener("click", () => updateCarousel(currentIndex - 1));
-    nextBtn.addEventListener("click", () => updateCarousel(currentIndex + 1));
+    prev.onclick = () => updateCarousel(current - 1);
+    next.onclick = () => updateCarousel(current + 1);
+    dots.forEach(dot => dot.onclick = () => updateCarousel(+dot.dataset.index));
 
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = parseInt(dot.getAttribute("data-index"), 10);
-        updateCarousel(idx);
-      });
-    });
-
-    // Simple swipe support on carousel
+    // Swipe
     let startX = null;
-    track.addEventListener("touchstart", (e) => {
-      if (e.touches.length === 1) {
-        startX = e.touches[0].clientX;
-      }
-    });
-    track.addEventListener("touchmove", (e) => {
+    track.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+    track.addEventListener("touchmove", e => {
       if (!startX) return;
       const diff = e.touches[0].clientX - startX;
       if (Math.abs(diff) > 60) {
-        updateCarousel(currentIndex + (diff < 0 ? 1 : -1));
+        updateCarousel(current + (diff < 0 ? 1 : -1));
         startX = null;
       }
     });
-    track.addEventListener("touchend", () => {
-      startX = null;
-    });
 
-    // Floating contact button scroll
-    const floatingContact = document.getElementById("floating-contact");
-    floatingContact.addEventListener("click", () => {
-      const contactSection = document.getElementById("contact");
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    });
+    // Floating button scroll
+    document.getElementById("floating-contact")
+      .addEventListener("click", () => {
+        document.getElementById("contact")
+          .scrollIntoView({ behavior: "smooth" });
+      });
 
-    // Fade-in sections on scroll
+    // Fade-in sections
     const fadeSections = document.querySelectorAll(".fade-section");
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          observer.unobserve(e.target);
+        }
+      }),
       { threshold: 0.15 }
     );
-    fadeSections.forEach((section) => observer.observe(section));
+    fadeSections.forEach(s => observer.observe(s));
   </script>
+
 </body>
 </html>
